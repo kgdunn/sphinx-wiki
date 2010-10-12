@@ -86,7 +86,7 @@ shown by example:
 
     Images must (currently) be included as:
 
-    .. figure:: images/reactor.png
+    .. figure:: reactor.png
 	    :scale: 40
 	    :align: center
 
@@ -95,9 +95,17 @@ shown by example:
 
     </rst>
 
-The default for both options is `True`, so you can omit that entire line. The
-'toc' option will generate a table of contents at the start of your page, using
-whatever table of contents that Sphinx would have generated.
+The default for both options is `True`, so you can omit both options, if
+not required.
+
+The 'toc' option will generate a table of contents at the start of your page,
+using whatever table of contents that Sphinx would have generated.
+
+The 'reset-figures' option can normally be set to False for most circumstances.
+If you set it to True, it will download the image from the wiki, using the wiki
+API.  This can take quite some time, if there are many images in the page.  So
+only change it to True if you've uploaded a new version of the image but kept
+the same image name.
 """
 
 # Imports
