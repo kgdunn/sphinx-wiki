@@ -246,7 +246,8 @@ def process_rst_text(rst_text, log_file):
     #    is compiled by Sphinx; if we just compiled in a single directory, then
     #    we would not be able to handle multiple users editing on the wiki.
     text_hash = md5(rst_text).hexdigest()
-    log_file.debug('Hash is = %s; snippet = %s' % (text_hash,
+    log_file.info('From IP number: %s; hash = %s; snippet = %s' % (\
+                                        os.environ['REMOTE_ADDR'], text_hash,
                                         rst_text[50:150].replace('\n',';')))
 
     # 1. Pre-process the raw RST test: process any options that are given. E.g.:
@@ -287,10 +288,10 @@ def process_rst_text(rst_text, log_file):
     #    place them in an "images" directory that Sphinx can see.
     image_storage = rst_dir + os.sep + 'images'
     ensuredir(image_storage)
-    re_figure = re.compile(r'(\s)*..(\s)*figure::(\s)*images\/(.*)')
+    re_figure = re.compile(r'(\s)*..(\s)*figure::(\s)*(.*)')
     figures = re_figure.findall(rst_text)
     for figure in figures:
-        figure_name = figure[3]
+        figure_name = figure[3].split(os.sep)[-1]
 
         # Sphinx allows a wildcard specification: replace it with png'
         if figure_name[-1] == '*':
@@ -452,7 +453,7 @@ def process_rst_text(rst_text, log_file):
 if __name__ == '__main__':
     # 0. Setup logging: isn't there a shorter way to do this?
     my_logger = logging.getLogger('sphinx-wiki')
-    my_logger.setLevel(log_level)  # TODO: change the level to INFO
+    my_logger.setLevel(log_level)
     fh = logging.handlers.RotatingFileHandler(log_filename,
                                               maxBytes=2000000,
                                               backupCount=5)
