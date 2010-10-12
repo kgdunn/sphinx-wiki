@@ -156,7 +156,7 @@ extension_dir = '/var/www/w/extensions/sphinx-wiki/'   # end with trailing slash
 #   static_content_url = '/w/sphinx_images/'
 
 # The first part of the Sphinx output, which is to be replaced (probably doesn't
-# need to be adjusted by you, unless you also changes something in `conf.py`)
+# need to be adjusted by you, unless you also changed something in `conf.py`)
 sphinx_static_dir = '../_images'
 
 # The replacement text, as illustrated above.  This is a relative link to a
@@ -164,8 +164,9 @@ sphinx_static_dir = '../_images'
 # must resolve and access the image file, "a.png".
 static_content_url = '/w/sphinx_images/'
 
-# This is the physical directory on your server, relative to the server's root,
-# where the above image will be copied to, after Sphinx has compiled the HTML.
+# This is the physical directory on your server, that corresponds to the
+# `static_content_url` setting above.  This script will copy any images to that
+# location on your server, so they can be accessed when the user views the HTML.
 static_content_dir = '/var/www/w/sphinx_images/'
 
 # Logging
@@ -207,11 +208,13 @@ pickle_extension = '.fpickle' # what Sphinx will automatically append
 
 # ADVANCED
 # --------
-# I often include external source code in my pages (e.g. solutions to tutorials
-# and assignments). These are pulled in from a Mercurial repository.  That
+# I often include external source code in my pages (e.g. solutions to
+# assignments). These are pulled in from a Mercurial repository.  That
 # repo must exist somewhere, as a subdir of `compilearea`.  For example:
 #
 #    local_repo_dir = extension_dir + compilearea + os.sep + 'repo'
+#
+# Read the code below, in step 4, to see the details of what this does.
 
 # If left empty, then it won't pull/update the repo
 local_repo_dir = ''
