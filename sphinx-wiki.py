@@ -47,7 +47,7 @@ The 2 files that make this wiki extension operate by intercepting any text that
 appears between <rst> ... </rst> tags in the wiki.  We will call that text the
 `rst_text` here.
 
-This rst_text is received by "process-rst.py" (this file), and sent to Sphinx
+This rst_text is received by "sphinx-wiki.py" (this file), and sent to Sphinx
 to be converted to HTML via Sphinx's pickle builder.  That HTML is returned back
 to Mediawiki to display.
 
