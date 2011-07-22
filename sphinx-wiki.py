@@ -255,8 +255,8 @@ def process_rst_text(rst_text, log_file):
     #    we would not be able to handle multiple users editing on the wiki.
     text_hash = md5(rst_text).hexdigest()
     log_file.info('From IP number: %s; hash = %s; snippet = %s' % (\
-                                        os.environ['REMOTE_ADDR'], text_hash,
-                                        rst_text[50:150].replace('\n',';')))
+                                    os.environ.get('REMOTE_ADDR',''), text_hash,
+                                    rst_text[50:150].replace('\n',';')))
 
     # 1. Pre-process the raw RST test: process any options that are given. E.g.:
 
