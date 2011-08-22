@@ -342,7 +342,7 @@ def process_rst_text(rst_text, log_file):
                 if minor_version == '5':
                     if u.code == 200:
                         im_file.write(u.read())
-                elif minor_version == '6':
+                elif int(minor_version) >= 6:
                     if u.getcode() == 200:
                         im_file.write(u.read())
 
