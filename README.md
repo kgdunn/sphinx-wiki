@@ -21,7 +21,7 @@ We presume your wiki is located on the server at:  ```/var/www/wiki```
         hg clone http://bitbucket.org/kevindunn/sphinx-wiki
 ```
 
-    **Ensure this directory and all subdirectories below it are writable by your webserver.**
+**Ensure this directory and all subdirectories below it are writable by your webserver.**
 
 3.  Install the Python library ```wikitools``` that interacts with Mediawiki
 ```
@@ -50,8 +50,8 @@ Copyright is held by Kevin Dunn, 2010.
 
 This extension is used on several sites operated by the author.  Two that are publicly available as university courses:
 
-* [https://learnche.org/4C3/Main_Page for Engineering]
-* [https://learnche.org/3E4/Main_Page|Numerical methods]
+* [Statistics for Engineers](https://learnche.org/4C3/Main_Page)
+* [Numerical methods](https://learnche.org/3E4/Main_Page)
 
 On both sites you can click ```Edit``` at the top of the page to see the page's source.
 
