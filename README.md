@@ -55,7 +55,7 @@ This extension is used on several sites operated by the author.  Two that are pu
 
 On both sites you can click ```Edit``` at the top of the page to see the page's source.
 
-= Principle of operation =
+# Principle of operation 
 
 Mediawiki operates by converting your usual wiki markup to HTML.
 
